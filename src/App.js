@@ -1,29 +1,3 @@
-/*import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;*/
-
 import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import DataTable from './components/DataTable';
@@ -42,7 +16,6 @@ const App = () => {
     setAllOrderNumbers(orders || new Set());
     setTotalRows(total || 0);
   };
-  
 
   const handleCopyOrders = () => {
     navigator.clipboard.writeText(Array.from(allOrderNumbers).join(', '))
@@ -52,7 +25,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>XLSX Header Validator</h1>
+      <h1>Agruniek monsters uitsplitsen</h1>
       <FileUpload onFileUpload={handleFileUpload} />
       <Summary totalRows={totalRows} onCopyOrders={handleCopyOrders} groupedData={groupedData} />
       <DataTable groupedData={groupedData} />
