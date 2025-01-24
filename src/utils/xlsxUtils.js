@@ -85,7 +85,15 @@ export const processFile = (file) => {
         });
       });
 
-      resolve({ data: groupedData, orders: allOrderNumbers, total: totalRows });
+      // Sorteer groupedData op aantal entries (van groot naar klein)
+      const sortedGroupedData = Object.entries(groupedData)
+        .sort((a, b) => b[1].length - a[1].length)
+        .reduce((acc, [key, value]) => {
+          acc[key] = value;
+          return acc;
+        }, {});
+
+      resolve({ data: sortedGroupedData, orders: allOrderNumbers, total: totalRows });
     };
 
     reader.readAsArrayBuffer(file);
