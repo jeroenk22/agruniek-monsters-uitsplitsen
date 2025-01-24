@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './DataTable.module.css';
 
 const DataTable = ({ groupedData }) => {
   if (!groupedData || Object.keys(groupedData).length === 0) {
@@ -7,8 +8,8 @@ const DataTable = ({ groupedData }) => {
 
   const renderTables = () => {
     return Object.entries(groupedData).map(([group, entries]) => (
-      <div key={group}>
-        <h3>{group} (Aantal: {entries.length}):</h3>
+      <div key={group} className={styles.tableContainer}>
+        <h3 className={styles.tableTitle}>{group} (Aantal: {entries.length}):</h3>
         <table>
           <thead>
             <tr>
