@@ -15,7 +15,7 @@ const Summary = ({ totalRows, onCopyOrders, groupedData }) => {
     <div className="summary">
       <p>Totaal aantal monsters: {totalRows}</p>
       <button onClick={onCopyOrders}>Kopieër ordernummers</button>
-      <button onClick={handleDownload} style={{ backgroundColor: '#28a745', color: 'white' }}>
+      <button onClick={handleDownload} style={{ backgroundColor: '#28a745', color: 'white', marginLeft: '5px' }}>
         Download Excel
       </button>
     </div>
